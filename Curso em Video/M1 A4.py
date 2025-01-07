@@ -1,34 +1,34 @@
 # Testes simples
-#   print('Olá mundo')
-#   print(7+4)
-#   print('7'+'4')
-#   print('Olá', 5)
+print('Olá mundo')
+print(7+4)
+print('7'+'4')
+print('Olá', 5)
 # o + seria para mostrar uma MSG e outra MSG, não uma msg e um número
 # se for mostrar uma msg e um número, a VÍRGULA funciona melhor
 
-#   nome = 'Lucas'
-#   idade = '31'
-#   peso = '90'
+nome = 'Lucas'
+idade = '31'
+peso = '90'
 # = é recebe , == é igual
-#   print(nome, idade, peso)
+print(nome, idade, peso)
 
 # pra perguntar pra pessoa, e salvar a inf
-#   nome = input('Qual seu nome?')
-#   idade = input('Qual sua idade?')
-#   peso = input('Qual seu peso?')
-#   print(nome, idade, peso)
-#   print('Olá',nome,'.Sua idade é',idade,',seu peso é',peso)
+nome = input('Qual seu nome?')
+idade = input('Qual sua idade?')
+peso = input('Qual seu peso?')
+print(nome, idade, peso)
+print('Olá',nome,'.Sua idade é',idade,',seu peso é',peso)
 
 # Desafio 1
-#   nome = input('Qual seu nome?')
-#   print('Seja muito bem-vindo',nome,'!')
-#   print('Olá',nome,'! Prazer em te conhecer!')
+nome = input('Qual seu nome?')
+print('Seja muito bem-vindo',nome,'!')
+print('Olá',nome,'! Prazer em te conhecer!')
 
 # Desafio 2
-#   dia = input('Qual dia você nasceu?')
-#   mes = input('Qual mês você nasceu?')
-#   ano = input('Que ano você nasceu?')
-#   print('Você nasceu no dia',dia,'de',mes,'de',ano,'. Correto?')
+dia = input('Qual dia você nasceu?')
+mes = input('Qual mês você nasceu?')
+ano = input('Que ano você nasceu?')
+print('Você nasceu no dia',dia,'de',mes,'de',ano,'. Correto?')
 
 # Desafio 3
 n1 = input('1o número:')
