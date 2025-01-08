@@ -32,5 +32,40 @@ print(n1 % n2)
 
 # outra forma de potência é uma função intera: pow(4,2)=16 , pow(4,3)=16
 # raiz pode ser calculado elevando à 1/2: 81**(1/2)=9 , 25**(1/2)=5  -> resolve (), dá 0,5, depois resolve a **
+# raiz cubica eleva a 1/3: 127**(1/3)=5,0265256
 
-# 20:54
+# dá pra fazer isso com texto tbm
+print('Oi'+'Olá')
+print('Oi'*5)
+print('='*20)
+
+# escrever algo em X espaços e alinhar o texto nele
+nome = (input('Qual seu nome?'))
+# escrever nome em 20 espaços, sem alinhamento
+print('Prazer em te conhecer {:20}!' .format(nome))
+# escrever nome em 20 espaços, alinhado pra direita
+print('Prazer em te conhecer {:>20}!' .format(nome))
+# escrever nome em 20 espaços, alinhado pra esquerda
+print('Prazer em te conhecer {:<20}!' .format(nome))
+# escrever nome em 20 espaços, centralizado
+print('Prazer em te conhecer {:^20}!' .format(nome))
+# escrever nome em 20 espaços, com símbolos preenchendo os espaços em branco
+print('Prazer em te conhecer {:=^20}!' .format(nome))
+
+# modificando o texto no print
+n1 = int(input('Digite um valor: '))
+n2 = int(input('Digite outro valor: '))
+soma = n1+n2
+mult = n1*n2
+div = n1/n2
+divint = n1//n2
+expo = n1**n2
+print('A soma vale {}, o produto vale {}, e a divisão vale {}' .format(soma, mult, div), end=" ")
+    # esse end une as 2 linhas de print em uma só, e se quiser pode add alguma coisa nele
+print('A div int vale {} e a potência vale {}' .format(divint, expo))
+
+# \n quebra a linha , :.3f é limitar o campo em 3 caractéres decimais em float
+print('A soma vale {}, \n o produto vale {}, \n e a divisão vale {:.3f}' .format(soma, mult, div))
+print('A div int vale {} \n e a potência vale {}' .format(divint, expo))
+
+# agora vem os desafios 5 até o 13
