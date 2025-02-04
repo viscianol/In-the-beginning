@@ -1,11 +1,12 @@
 from random import choice
 import time
+from datetime import date
 
 # Ex 036
 print('Bem vindo ao Financiamento da Sua Casa!')
 print('Precisamos de algumas informações antes de seguirmos com o contrato: ')
-casa = float(input('Qual o valor da casa que você quer comprar? '))
-salario = float(input('Qual seu salário? '))
+casa = float(input('Qual o valor da casa que você quer comprar? R$ '))
+salario = float(input('Qual seu salário? R$ '))
 anos = int(input('Em quantos anos planeja pagar a casa? '))
 
 prestacao = casa / (anos*12)
@@ -23,7 +24,23 @@ print('---' * 20)
 
 
 # Ex 037
-# carai borracha...
+numero = int(input('Digite um número inteiro: '))
+print('''Escolha uma das bases para conversão: 
+[ 1 ] para Binário
+[ 2 ] para Octal
+[ 3 ] para Hexadecimal''')
+baseconv = int(input('Sua opção é: '))
+if baseconv == 1:
+    print('{} convertido para binário é igual a {}' .format(
+        numero, bin(numero)[2:]))
+elif baseconv == 2:
+    print('{} convertido em octal é igual a {}' .format(
+        numero, oct(numero)[2:]))
+elif baseconv == 3:
+    print('{} convertido em hexadecimal é igual a {}' .format(
+        numero, hex(numero)[2:]))
+else:
+    print('Opção inválida!')
 
 print('---' * 20)
 
@@ -49,12 +66,14 @@ idade = atual - anonasc
 if idade < 18:
     print('Ainda não está na hora de se alistar')
     print(f'Falta {18 - idade} ano(s) pra você se alistar')
+    print(f'Seu alistamento será em {atual + (18-idade)}')
 elif idade == 18:
     print('Tá na hora de se alistar! CORRE SEU BISONHO')
 elif idade > 18:
     print('Já passou da hora de se alistar SEU BISONHO')
     print(f'Já passou {
           idade - 18} ano(s) que você devia ter se alistado... Bisonho')
+    print(f'Seu alistamento foi em {atual - (idade-18)}')
 
 print('---' * 20)
 
@@ -66,19 +85,20 @@ media = (nota1 + nota2) / 2
 if media < 5.0:
     print(f'Sua média foi de {media}')
     print('Infelizmente você foi reprovado...')
-elif media >= 5.0 and media <= 6.9:
+elif media >= 5.0 and media < 7.0:
     print(f'Sua média foi de {media}')
     print('Você ficou de recuperação...')
-elif media > 7.0:
+elif media >= 7.0:
     print(f'Sua média foi de {media}')
     print('Você foi aprovado!')
 
 print('---' * 20)
 
 # Ex 041
+# from datetime import date
 print('A Conf Nac de Natação precisa definir sua categoria, com base na sua idade.')
 nasc2 = int(input('Qual seu ano de nascimento? '))
-atual2 = int(time.strftime('%Y'))
+atual2 = date.today().year
 idade2 = atual2 - nasc2
 print(f'Você tem {idade2} anos')
 
@@ -88,24 +108,27 @@ elif idade2 > 9 and idade2 <= 14:
     print('Sua categoria é a INFANTIL')
 elif idade2 > 14 and idade2 <= 19:
     print('Sua categoria é a JUNIOR')
-elif idade2 > 19 and idade2 <= 20:
+elif idade2 > 19 and idade2 <= 25:
     print('Sua categoria é a SÊNIOR')
-elif idade2 > 20:
+elif idade2 > 25:
     print('Sua categoria é a MASTER')
 
 print('---' * 20)
 
 # Ex 042
-'''reta1 = float(input('1° segmento: '))
+reta1 = float(input('1° segmento: '))
 reta2 = float(input('2° segmento: '))
 reta3 = float(input('3° segmento: '))
 if reta1 < reta2+reta3 and reta2 < reta1+reta3 and reta3 < reta1+reta2:
-    print('Os segmentos podem formar um triângulo.')
-    if reta1 == reta2 and reta1 == reta3 and reta2 == reta3:
-        print('Forma um triângulo equilátero')
-    elif 
+    print('Os segmentos podem formar um triângulo ', end='')
+    if reta1 == reta2 == reta3:
+        print('equilátero')
+    elif reta1 != reta2 != reta3 != reta1:
+        print('escaleno')
+    else:
+        print('isósceles')
 else:
-    print('Os segmentos não podem formar um triângulo.')'''
+    print('Os segmentos não podem formar um triângulo.')
 
 print('---' * 20)
 
