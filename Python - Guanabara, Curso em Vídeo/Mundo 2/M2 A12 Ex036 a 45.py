@@ -134,80 +134,101 @@ print('---' * 20)
 
 # Ex 043
 print('Calcule seu IMC!')
-peso = float(input('Quantos quilos você pesa? '))
-print('Você pesa {} kg.' .format(peso))
-altura = int(input('Qual sua altura em cm? '))
-print('Você tem {:.2f} m' .format(altura/100))
+peso = float(input('Quantos quilos você pesa, em kg? '))
+altura = int(input('Qual sua altura, em cm? '))
 IMC = peso / ((altura/100) ** 2)
 print('Seu IMC é igual à {:.1f}' .format(IMC))
 
-if IMC <= 18.5:
+if IMC < 18.5:
     print('Abaixo do peso')
-elif IMC > 18.5 and IMC <= 25:
+elif IMC >= 18.5 and IMC < 25:
     print('Peso ideal')
-elif IMC > 25 and IMC <= 30:
+elif IMC >= 25 and IMC < 30:
     print('Sobrepeso')
-elif IMC > 30 and IMC <= 40:
+elif IMC >= 30 and IMC < 40:
     print('Obesidade')
-elif IMC > 40:
+elif IMC >= 40:
     print('Obesidade mórbida')
 
 print('---' * 20)
 
 # Ex 044
 preco = float(input('Qual o preço do produto? R$ '))
-condpgto = int(input('Escolha a opção de pagamento desejada: \n 0 - à vista dinheiro \n 1 - à vista cartão \n 2 - até 2x cartão \n 3 - 3x ou mais no cartão \n Qual sua escolha? '))
+condpgto = int(input('''Escolha a opção de pagamento desejada:
+1 - à vista dinheiro
+2 - à vista cartão
+3 - até 2x cartão
+4 - 3x ou mais no cartão
+Qual sua escolha? '''))
 
-if condpgto == 0:
+if condpgto == 1:
     print('Tem 10% de desconto')
     valor = preco * 0.9
     print('O valor final será de R$ {:.2f}' .format(valor))
-elif condpgto == 1:
+elif condpgto == 2:
     print('Tem 5% de desconto')
     valor = preco * 0.95
     print('O valor final será de R$ {:.2f}' .format(valor))
-elif condpgto == 2:
-    print('Preço normal do produto.')
-    print('O valor final será de R$ {:.2f}' .format(preco))
 elif condpgto == 3:
+    print('Preço normal do produto.')
+    valorparc = preco / 2
+    print('O valor final será de R$ {:.2f}, com 2 parcelas de R$ {:.2f} sem juros.' .format(
+        preco, valorparc))
+elif condpgto == 4:
     print('Tem 20% de juros')
     valor = preco * 1.2
-    print('O valor final será de R$ {:.2f}' .format(valor))
+    parc = int(input('Quantas parcelas? '))
+    valorparc = valor / parc
+    print('O valor final será de R$ {:.2f}, com {} parcelas de R$ {:.2f} com juros.' .format(
+        valor, parc, valorparc))
+else:
+    print('Opção inválida!')
 
 print('---' * 20)
 
 # Ex 045
+# from random import choice
 print('Jo  ken  pô  !')
 pc = choice(['pedra', 'papel', 'tesoura'])
-jogador = str(input('Escolha uma opção entre Pedra Papel ou Tesoura! '))
+jogador = str(
+    input('Escolha uma opção entre Pedra Papel ou Tesoura! ')).strip()
 escolha = jogador.lower()
 
-if pc == 'pedra' and jogador == 'papel':
-    print(f'PC: {pc} X Jogador: {escolha}')
-    print('Você ganhou')
-elif pc == 'pedra' and jogador == 'tesoura':
-    print(f'PC: {pc} X Jogador: {escolha}')
-    print('Você perdeu')
-elif pc == 'pedra' and jogador == 'pedra':
-    print(f'PC: {pc} X Jogador: {escolha}')
-    print('Empatou')
+if pc == 'pedra':
+    if escolha == 'papel':
+        print(f'PC: {pc} X Jogador: {escolha}')
+        print('Você ganhou')
+    elif escolha == 'tesoura':
+        print(f'PC: {pc} X Jogador: {escolha}')
+        print('Você perdeu')
+    elif escolha == 'pedra':
+        print(f'PC: {pc} X Jogador: {escolha}')
+        print('Empatou')
+    else:
+        print('Jogada inválida!')
 
-elif pc == 'papel' and jogador == 'tesoura':
-    print(f'PC: {pc} X Jogador: {escolha}')
-    print('Você ganhou')
-elif pc == 'papel' and jogador == 'pedra':
-    print(f'PC: {pc} X Jogador: {escolha}')
-    print('Você perdeu')
-elif pc == 'papel' and jogador == 'papel':
-    print(f'PC: {pc} X Jogador: {escolha}')
-    print('Empatou')
+elif pc == 'papel':
+    if escolha == 'tesoura':
+        print(f'PC: {pc} X Jogador: {escolha}')
+        print('Você ganhou')
+    elif escolha == 'pedra':
+        print(f'PC: {pc} X Jogador: {escolha}')
+        print('Você perdeu')
+    elif escolha == 'papel':
+        print(f'PC: {pc} X Jogador: {escolha}')
+        print('Empatou')
+    else:
+        print('Jogada inválida!')
 
-elif pc == 'tesoura' and jogador == 'pedra':
-    print(f'PC: {pc} X Jogador: {escolha}')
-    print('Você ganhou')
-elif pc == 'tesoura' and jogador == 'papel':
-    print(f'PC: {pc} X Jogador: {escolha}')
-    print('Você perdeu')
-elif pc == 'tesoura' and jogador == 'tesoura':
-    print(f'PC: {pc} X Jogador: {escolha}')
-    print('Empatou')
+elif pc == 'tesoura':
+    if escolha == 'pedra':
+        print(f'PC: {pc} X Jogador: {escolha}')
+        print('Você ganhou')
+    elif escolha == 'papel':
+        print(f'PC: {pc} X Jogador: {escolha}')
+        print('Você perdeu')
+    elif escolha == 'tesoura':
+        print(f'PC: {pc} X Jogador: {escolha}')
+        print('Empatou')
+    else:
+        print('Opção inválida.')
